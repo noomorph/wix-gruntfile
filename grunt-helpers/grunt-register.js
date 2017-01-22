@@ -8,10 +8,10 @@ module.exports = function (grunt, options) {
   });
 
   var preBuildTasks = [
+    'babelIfEnabled',
+    'typescriptIfEnabled',
     'jsstyleIfEnabled',
     'scssstyleIfEnabled',
-    'typescriptIfEnabled',
-    'babelIfEnabled',
     'mkdirTmpStyles',
     'newer:webfontIfEnabled',
     'hamlIfEnabled',
