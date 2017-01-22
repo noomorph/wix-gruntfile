@@ -53,6 +53,12 @@ module.exports = function (grunt, options) {
     }
   });
 
+	grunt.registerTask('watchTsIfEnabled', 'Run TypeScript in watch mode', function () {
+		if (grunt.task.exists('ts') && featureDetector.isTypescriptEnabled()) {
+			grunt.task.run('ts:watch');
+		}
+	});
+
   var createDeclaration = options.bowerComponent;
 
   var typeScriptConfig;
@@ -91,7 +97,8 @@ module.exports = function (grunt, options) {
         stripInternal: true,
         compiler: './node_modules/typescript/bin/tsc'
       },
-      build: typeScriptConfig
+      build: typeScriptConfig,
+		watch: Object.assign({ watch: true }, typeScriptConfig),
     },
 
     babel: {

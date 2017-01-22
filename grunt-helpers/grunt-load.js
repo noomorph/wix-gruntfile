@@ -23,6 +23,7 @@ module.exports = function (grunt, options) {
     'grunt-ejs',
     'grunt-contrib-copy',
     'grunt-karma',
+    'grunt-concurrent',
     'grunt-contrib-watch',
     'grunt-contrib-connect',
     'grunt-contrib-compass',

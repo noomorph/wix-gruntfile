@@ -31,6 +31,7 @@ module.exports = function (grunt, options) {
 		webfont:                require('../grunt-sections/generators')(grunt, options).webfont,
 
 		watch:                  require('../grunt-sections/watch')(grunt, options),
+		concurrent:             require('../grunt-sections/concurrent')(grunt, options),
 		connect:                require('../grunt-sections/connect')(grunt, options),
 
 		imagemin:               require('../grunt-sections/minify')(grunt, options).imagemin,

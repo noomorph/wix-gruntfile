@@ -69,20 +69,6 @@ module.exports = function (grunt, options) {
       ],
       tasks: ['babelIfEnabled', 'jsstyleIfEnabled', 'triggerLivereload', 'runKarma']
     },
-    ts: {
-      files: ['{test,app/scripts,app/modules,app/test}/**/*.ts', 'app/tsconfig.json'],
-      tasks: ['jsstyleIfEnabled', 'tsWithHack:copy', 'triggerLivereload', 'runKarma'],
-      options: {
-        event: ['changed', 'added']
-      }
-    },
-    tsDelete: {
-      files: ['{test,app/scripts,app/modules}/**/*.ts'],
-      tasks: ['clean:ts', 'tsWithHack:copy', 'triggerLivereload', 'runKarma'],
-      options: {
-        event: ['deleted']
-      }
-    },
     compass: {
       files: ['app/{styles,modules}/**/*.{scss,sass}'],
       tasks: ['scssstyleIfEnabled', 'compass:server', 'autoprefixerIfEnabled', 'replaceOrVelocity', 'styleInlineServeIfEnabled', 'newer:copy:vm', 'triggerLivereload']
